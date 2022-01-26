@@ -9,7 +9,7 @@ BSF overview.
 
 from typing import Dict, List
 
-graph = {
+graph: Dict[str, List[str]] = {
   '5' : ['3','7'],
   '3' : ['2', '4'],
   '7' : ['8'],
