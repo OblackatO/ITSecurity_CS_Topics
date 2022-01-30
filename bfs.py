@@ -1,10 +1,3 @@
-"""
-BSF overview.
-- Visits all nodes and saves children of visited nodes.
-- Does the same thing for each child node.
-- If some child node is already in the Queue of found nodes, skip it
-"""
-
 # Input and figure extracted from https://favtutor.com/blogs/breadth-first-search-python
 
 from typing import Dict, List
@@ -19,7 +12,7 @@ graph: Dict[str, List[str]] = {
 }
 
 """
-My version.
+BFS My version.
 """
 def bfs_my_version(graph):
     queue = []
@@ -38,7 +31,7 @@ def bfs_my_version(graph):
 
 
 """
-https://favtutor.com/blogs/breadth-first-search-python version
+solution version: https://favtutor.com/blogs/breadth-first-search-python
 """
 visited = [] # List for visited nodes.
 queue = []     #Initialize a queue
@@ -54,10 +47,6 @@ def bfs(visited, graph, node): #function for BFS
       if neighbour not in visited:
         visited.append(neighbour)
         queue.append(neighbour)
-
-# Driver Code
-#print("Following is the Breadth-First Search")
-#bfs(visited, graph, '5')    # function calling
 
 
 if __name__ == "__main__":
