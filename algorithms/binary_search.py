@@ -1,6 +1,5 @@
-"""
-Given the following array [1,6,10,20,22,40,45,60,67], find the index of x(x = 67), using the binary search algorithm
-"""
+# Given the following array [1,6,10,20,22,40,45,60,67], find the index of x(x = 67), using the binary search algorithm
+
 
 import typing
 

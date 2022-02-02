@@ -14,7 +14,7 @@ graph: Dict[str, List[str]] = {
 """
 BFS My version.
 """
-def bfs_my_version(graph):
+def bfs_my_version(graph) -> List[str]:
     queue = []
     visited_nodes = []
 

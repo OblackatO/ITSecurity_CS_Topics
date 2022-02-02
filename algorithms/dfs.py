@@ -16,7 +16,7 @@ graph: Dict[str, List[str]] = {
 """
 DFS My version.
 """
-def bfs_my_version(graph: Dict[str, List[str]], visited: List[str], node: str):
+def bfs_my_version(graph: Dict[str, List[str]], visited: List[str], node: str) -> List[str]:
     if node not in visited:
         visited.append(node)
         for child in graph[node]:
