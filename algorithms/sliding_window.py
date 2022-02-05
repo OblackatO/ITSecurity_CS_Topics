@@ -5,6 +5,10 @@
 # input_string = "asdnkasdknaaaaduauwdamssdaomsodiasdhassdjiunbmösdppfsuhfssdhfaovmxxxvnalaspd"
 input_string  = "aaaaaaaaaaaaaaaa"
 
+
+
+
+# 2nd try - with the help of brain notes - works.
 """
 [>] Basic Idea
 - Iterate over each char.
@@ -51,23 +55,7 @@ sliding_windows2(input_string)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 1st try - FAILED
 def sliding_window(input_string: str) -> str:
     longest_string_temp = ""
     longest_string_final = ""
