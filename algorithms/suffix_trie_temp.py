@@ -34,7 +34,7 @@ def build_suffix_trie(word:str, root_node:RootNode):
                 prev_node[current_char] = {}
             prev_node = prev_node[current_char]
         word_len -= 1
-    pprint(root_node.children)
+    print(root_node.children)
 
 word = "test"
 build_suffix_trie("test", RootNode())
