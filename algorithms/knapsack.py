@@ -1,6 +1,7 @@
 # 0/1 KnapSack problem overview: https://en.wikipedia.org/wiki/Knapsack_problem
 
 from typing import List
+from xmlrpc.client import boolean
 
 class KnapSackItem:
 
@@ -21,25 +22,47 @@ of its predecessors on each case (row,column) case.
 
 def build_weights_table(list_items:List[KnapSackItem]) -> List[int]:
     optimal_weight:List[int] = []
-    for weight_index in range(0, KnapSackItem.BAG_MAX_WEIGHT): # weights are the columns
+    optimal_weight_hits:List[bool] = []
+    for item_index in range(0, len(list_items)):
         optimal_weight.append([])
-        for item_index in range(0, len(list_items)): # items are the rows
-            if weight_index == 0:
-                optimal_weight[weight_index].append(0)
-                continue
-            print(f"optimal_weight so far: {optimal_weight}")
-            item_weight = list_items[item_index].weight
-            item_value = list_items[item_index].value
-            if weight_index >= item_weight:
+        optimal_weight_hits.append([])
+        if item_index == 0:
+            for weight_index in range(0, KnapSackItem.BAG_MAX_WEIGHT+1):
+                optimal_weight[item_index].append(0)
+                optimal_weight_hits[item_index].append(False)
+            continue
+        item_weight = list_items[item_index].weight
+        item_value = list_items[item_index].value
+        for weight_index in range(0, KnapSackItem.BAG_MAX_WEIGHT+1):
+            if weight_index != 0 and weight_index >= item_weight:
                 optimal_value = max(
-                    optimal_weight[weight_index-1][item_index-1],
-                    item_value+optimal_weight[weight_index-item_weight][item_index-1]
+                    optimal_weight[item_index-1][weight_index],
+                    item_value + optimal_weight[item_index-1][weight_index-item_weight]
                 )
+                optimal_weight_hits[item_index].append(True)
             else:
-                optimal_value = optimal_weight[weight_index-1][item_index-1]
-            optimal_weight[weight_index].append(optimal_value)
-    return optimal_weight
+                optimal_value = optimal_weight[item_index-1][weight_index]
+                optimal_weight_hits[item_index].append(False)
+            optimal_weight[item_index].append(optimal_value)
+    return (optimal_weight, optimal_weight_hits)
 
-items_list = [KnapSackItem(3, 2), KnapSackItem(5, 4), KnapSackItem(7, 3), KnapSackItem(4, 6)]
-print(build_weights_table(items_list))
+def print_selected_items(boolean_list:List[boolean], items_list:List[KnapSackItem]):
+    max_weight = KnapSackItem.BAG_MAX_WEIGHT
+    for item_index in range(len(boolean_list)-1, 1, -1):
+        #print(item_index, max_weight)
+        if boolean_list[item_index][max_weight]:
+            print(f"{item_index}", end='+')
+            max_weight -= items_list[item_index].weight
+
+items_list = [
+    KnapSackItem(10, 5),
+    KnapSackItem(40, 4),
+    KnapSackItem(30, 6),
+    KnapSackItem(60, 3)
+]
+items_list.insert(0, KnapSackItem(0,0)) # First element is 0,0 -> Covers the 'no objects' case.
+results = build_weights_table(items_list)
+print(f"Maximized value: {results[0][-1][-1]}")
+print_selected_items(boolean_list=results[1], items_list=items_list)
+
 
