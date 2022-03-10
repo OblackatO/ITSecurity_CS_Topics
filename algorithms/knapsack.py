@@ -34,7 +34,8 @@ def build_weights_table(list_items:List[KnapSackItem]) -> List[int]:
         item_weight = list_items[item_index].weight
         item_value = list_items[item_index].value
         for weight_index in range(0, KnapSackItem.BAG_MAX_WEIGHT+1):
-            if weight_index != 0 and weight_index >= item_weight and optimal_weight[item_index-1][weight_index] < item_value + optimal_weight[item_index-1][weight_index-item_weight]:
+            previous_item_value = optimal_weight[item_index-1][weight_index] < item_value + optimal_weight[item_index-1][weight_index-item_weight]
+            if weight_index != 0 and weight_index >= item_weight and previous_item_value:
                 optimal_value = item_value + optimal_weight[item_index-1][weight_index-item_weight]
                 optimal_weight_hits[item_index].append(True)
             else:
