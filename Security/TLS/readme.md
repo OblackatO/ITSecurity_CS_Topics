@@ -43,10 +43,10 @@ nmap --script ssl-enum-ciphers -p <port_number> <server>
 
 
 # References
-[How secure can HTTPS be? Demystifying TLS Cipher Suites!](https://www.youtube.com/watch?v=XwrfZLKsuhE)
-[Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)
-[Cipher suite info](https://ciphersuite.info)
-[TLS 1.2 vs TLS 1.3: What are the Main Differences?](https://www.linkedin.com/pulse/tls-12-vs-13-what-main-differences-farid-jabari/)
-[TLS 1.3: Everything you need to know](https://www.thesslstore.com/blog/tls-1-3-everything-possibly-needed-know/)
-[Diffie–Hellman key exchange](https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange)
-[Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
+- [How secure can HTTPS be? Demystifying TLS Cipher Suites!](https://www.youtube.com/watch?v=XwrfZLKsuhE)
+- [Breaking Down the TLS Handshake](https://www.youtube.com/watch?v=cuR05y_2Gxc)
+- [Cipher suite info](https://ciphersuite.info)
+- [TLS 1.2 vs TLS 1.3: What are the Main Differences?](https://www.linkedin.com/pulse/tls-12-vs-13-what-main-differences-farid-jabari/)
+- [TLS 1.3: Everything you need to know](https://www.thesslstore.com/blog/tls-1-3-everything-possibly-needed-know/)
+- [Diffie–Hellman key exchange](https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange)
+- [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)

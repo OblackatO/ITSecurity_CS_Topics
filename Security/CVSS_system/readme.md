@@ -30,10 +30,10 @@ Finally, all the details about the attack vector choices and the remaining sub-s
 - [CVSSv3 full documentation](https://www.first.org/cvss/specification-document)
 
 
-# References
+# References  
 - [Differences Between CVSSv2 and CVSSv3](https://www.balbix.com/insights/cvss-v2-vs-cvss-v3/)
 - [CVSS base score explained](https://www.balbix.com/insights/base-cvss-scores/)
 - [CVSS temporal metrics explained](https://www.balbix.com/insights/temporal-cvss-scores/)
 - [Environmental CVSS Scores](https://www.balbix.com/insights/environmental-cvss-scores/)
 - [A Complete Guide to the Common Vulnerability Scoring System v2.0](https://www.first.org/cvss/v2/guide)
-- [Common Vulnerability Scoring System version 3.1: Specification Document CVSS Version 3.1 Release](https://www.first.org/cvss/specification-document)  
+- [Common Vulnerability Scoring System version 3.1: Specification Document CVSS Version 3.1 Release](https://www.first.org/cvss/specification-document)
