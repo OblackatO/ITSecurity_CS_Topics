@@ -1,0 +1,36 @@
+# Options used in all feeds.
+# They can be chosen to be ignored, individually, in each feed.
+common-options:
+  # Only IOCs in relation with the threats of threats_to_parse will be parsed.
+  threats_to_parse: ['qakbot', 'qbot']
+  time:
+    # All units are added. E.x: 2h + 20min + 60sec = 141 minutes
+    # Looks for all IOC, posted 141min ago, up until current time.
+    hours:
+    minutes:
+    seconds:
+
+
+# Options for specific feeds.
+# If some option is set to -1, and it exists in common-options, the value in common-options is used.
+URLHaus-online:
+  feed_url: https://urlhaus.abuse.ch/downloads/csv_recent/
+  threats_to_parse: -1
+  ioc_status: 'online'
+  time:
+    # Sums up all units 2h + 20min + 60sec = 141 minutes
+    # Looks for all IOC, posted 141min ago, up until current time.
+    hours: -1
+    minutes: -1
+    seconds: -1
+
+URLHaus-offline:
+  feed_url: https://urlhaus.abuse.ch/downloads/csv_recent/
+  threats_to_parse: -1
+  ioc_status: 'offline'
+  time:
+    # Sums up all units 2h + 20min + 60sec = 141 minutes
+    # Looks for all IOC, posted 141min ago, up until current time.
+    hours: -1
+    minutes: -1
+    seconds: -1
